@@ -1,0 +1,43 @@
+Paul Pemberton
+
+Worked with AJ Jenkins, Ayal Pierce, Bobby McShane, Aaron Wishnick
+
+Spent approx. 3 hrs on this project.
+
+#####################################
+Project Overview:
+
+NULL SCAN:
+Null scans were detected based on TCP packets only.
+If the flags for the TCP packet added up to 0, then the scan was
+considered to be a null scan.
+
+XMAS TREE SCAN:
+Xmas tree scan were detected based on TCP packets only as well.
+If the flags for the TCP packet added to the maximum possible (all 1s)
+then the scan was considered to be an Xmas tree scan (total = 41)
+
+NMAP SCAN:
+Other types of nmap scans were recognized by searching for the word "Nmap" in
+the payload.  The binary version of this string was also searched for.
+
+PASSWORD LEAKAGE:
+If the word "Pass" was leaked in the clear (both binary and ASCII), then
+the leaked password alert is emitted.
+
+CREDIT CARD LEAKAGE:
+There were three classifications of credit card numbers:
+1. XXXX-XXXX-XXXX-XXXX (Highly likely to be real)
+2. XXXX XXXX XXXX XXXX (Moderately likely to be real)
+3. XXXXXXXXXXXXXXXX (Any set of 16 digits will cause this)
+
+To mitigate false positives, there is a risk factor associated with each
+of the leaked password formats.
+
+XXS ATTACK:
+The XXS sensor looks for the following strings:
+<script> alert* </script>
+<script> window.create* </script>
+
+Either of these will be seen as a possible XXS attack and the appropriate 
+alert will be output.

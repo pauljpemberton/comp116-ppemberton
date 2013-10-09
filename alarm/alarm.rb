@@ -3,23 +3,24 @@ require 'packetfu'
 capture = PacketFu::Capture.new(:start => true, :iface => 'eth0', :filter => 'tcp', :promisc => true)
 
 def pload_has(payload, word)
+    bword = word.each_byte.map { |b| sprintf(" 0x%02x ",b) }.join
     if payload.downcase.include? word
-        true
-    bword = word.each_byte.map{ |b| sprintf(" 0x%02x ",b) }.join
-    elsif payload.include? bword
-        true
+        return true
+    elsif payload.downcase.include? bword
+        return true
     end
+    return false
 end
 
-def alerts(alert_num, output, ip_source, potocol)
-    puts("#{alert_num}. ALERT: #{output} #{ip_source} (#{protocol})!")
+def alerts(alert_num, output, ip_source, protocol)
+    puts "#{alert_num}. ALERT: #{output} #{ip_source} (#{protocol})!"
 end
+
+alert_num = 1
 
 capture.stream.each do |p|
-    alert_num = 1
 	pkt = PacketFu::Packet.parse p
-    pload = pkt.payload
-
+	pload = pkt.payload
 	if pkt.is_ip?
         if pkt.is_tcp?
             # NULL SCAN
