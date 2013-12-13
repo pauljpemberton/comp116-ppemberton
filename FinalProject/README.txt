@@ -59,7 +59,7 @@ DEFCON 2: high risk level - response is pop-up window warning user to "Tread
 DEFCON 1: highest risk level - response is pop-up window stating "NUCLEAR OPTION
           ACTIVE"  Info bar text advises user to navigate away immediately
 
-These responses should give the user live and (although not yet accurate - see
+These responses should give the user live (although not yet accurate - see
 below) information about the page that they are currently visiting.
 
 ================================================================================
@@ -73,7 +73,7 @@ foreign websites/alter the window).
 If it were to be used in a practical sense, this script should be developed to
 use machine learning or other sophisticated techniques to determine what
 pages are actually bad or good (as opposed to arbitrary scoring based on 
-what words the JS portions of a page has). Addtionally, there are a few features
+what words the JS portions of a page has). Additionally, there are a few features
 in terms of warning users that would be nice to add.  For example, the different
 levels of warning could not only output a message but also change the color of
 the info bar.  Or perhaps, at the highest risk level, the user would actually
