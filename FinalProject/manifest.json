@@ -1,0 +1,32 @@
+//This code is based off of code developed by Chromium Authors (c) 2013
+
+//This code has been modified for running the Script Raider files as well
+//as using new icons/description.  The matches portion of content_scripts
+//was also modified to include https:// URLs.
+
+{
+  "name" : "Java Script Finder",
+  "version" : "1.0.1",
+  "description" : "Adds an inforbar alerting a user to the risk of currently running javascript",
+  "background" : {
+    "scripts": ["background.js"]
+  },
+  "icons" : {
+    "16" : "scroll.png",	//amrosedesigns.co.uk
+    "19" : "scroll.png",
+    "48" : "javascript.png",	//iconarchive.com
+    "128" : "javascript.png"
+  },
+  "permissions" : [
+     "infobars"
+  ],
+  "content_scripts" : [
+    {
+      "matches" : [ "*://*/*" ],
+      "js" : [ "contentscript.js" ],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "manifest_version": 2
+}

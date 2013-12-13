@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+infobar.html: This file specifies the format for the infobar that appears in chrome when a page is scored based on malicious javascripts running.
+-->
+<!-- This code is based off of code developed by The Chromium Authors (c) 2013
+-->
+<html>
+  <head>
+    <style>
+      html {
+        height: 40px;
+      }
+      body {
+        background: #fffddd;
+        font: 16px Arial;
+        height: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: center;
+      }
+      em {
+        font-weight: bold;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <em id ="warning">X</em>
+    </div>
+    <script src="infobar.js"></script>
+  </body>
+</html>
