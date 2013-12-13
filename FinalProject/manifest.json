@@ -5,7 +5,7 @@
 //was also modified to include https:// URLs.
 
 {
-  "name" : "Java Script Finder",
+  "name" : "ScriptRaider",
   "version" : "1.0.1",
   "description" : "Adds an inforbar alerting a user to the risk of currently running javascript",
   "background" : {

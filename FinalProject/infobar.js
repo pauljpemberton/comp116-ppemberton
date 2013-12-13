@@ -3,7 +3,6 @@ var pgScore = window.location.hash.substring(1);
 var warning;
 
 if (pgScore) {
-	alert(pgScore);
 	if (pgScore <= 100) {	//Very low risk page
 		warning = "Defcon 5: This page seems relatively safe (very low risk).";
 	}
