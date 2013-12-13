@@ -72,7 +72,7 @@ returned by the search contains numerous scripts that will take the user to
 foreign websites/alter the window).
 If it were to be used in a practical sense, this script should be developed to
 use machine learning or other sophisticated techniques to determine what
-pages are actually bad or god (as opposed to arbitrary scoring based on 
+pages are actually bad or good (as opposed to arbitrary scoring based on 
 what words the JS portions of a page has). Addtionally, there are a few features
 in terms of warning users that would be nice to add.  For example, the different
 levels of warning could not only output a message but also change the color of
